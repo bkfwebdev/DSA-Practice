@@ -35,37 +35,7 @@ Explanation:
 */
 
 const k_radius_subarray = (nums, k) => {
-    const n = nums.length;
-    const avg = [];
-  
-    if (k === 0) {
-      // Special case: k = 0, so the average is just the element itself
-      return nums;
-    }
-  
-    for (let centerPointer = 0; centerPointer < n; centerPointer++) {
-      let leftPointer = centerPointer - k;
-      let rightPointer = centerPointer + k;
-      let sum = 0;
-      let denom = 0; // Variable to count the number of elements in the subarray
-  
-      for (let i = leftPointer; i <= rightPointer; i++) {
-        if (i >= 0 && i < n) { // Check if i is within the bounds of the array
-          sum += nums[i];
-          denom++;
-        }
-      }
-  
-      if (denom < 2 * k + 1) {
-        // If the subarray size is less than 2 * k + 1, set the average to -1
-        avg[centerPointer] = -1;
-      } else {
-        // Calculate the average and store it in the result array
-        avg[centerPointer] = Math.floor(sum / denom); // Using integer division
-      }
-    }
-  
-    return avg;
+
   }
   
   // Test data
